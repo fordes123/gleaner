@@ -32,7 +32,7 @@
           rel="stylesheet"/>
     <link href="//lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.css" type="text/css"
           rel="stylesheet"/>
-    <link href="//fastly.jsdelivr.net/gh/fordes123/gleaner/assets/css/core/styles.css" type="text/css"
+    <link href="//fastly.jsdelivr.net/gh/fordes123/gleaner/assets/css/styles.css" type="text/css"
           rel="stylesheet"/>
         <script src="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"
                 type="application/javascript"></script>
