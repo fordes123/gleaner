@@ -76,7 +76,7 @@
 <?php endif; ?>
 <?php if ($this->options->debug_mode) : ?>
     <script src="<?php $this->options->themeUrl('./assets/js/lazyload.js'); ?>" type="application/javascript"></script>
-    <script src="<?php $this->options->themeUrl('./assets/js/scripts.js'); ?>" type="application/javascript"></script>
+    <script src="<?php $this->options->themeUrl('./assets/js/scripts.min.js'); ?>" type="application/javascript"></script>
     <script src="<?php $this->options->themeUrl('./assets/js/jquery.fancybox.min.js'); ?>"
             type="application/javascript"></script>
 

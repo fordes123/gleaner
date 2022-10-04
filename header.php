@@ -15,7 +15,7 @@
         ), '', ' - '); ?><?php $this->options->bcool_title(); ?><?php if (!empty($this->options->bcool_titleb)) : ?> - <?php $this->options->bcool_titleb(); ?><?php endif; ?></title>
 
     <?php if ($this->options->debug_mode) : ?>
-    <link href="<?php $this->options->themeUrl('./assets/css/styles.css'); ?>" type="text/css" rel="stylesheet"/>
+    <link href="<?php $this->options->themeUrl('./assets/css/styles.min.css'); ?>" type="text/css" rel="stylesheet"/>
     <link href="<?php $this->options->themeUrl('./assets/css/third/animate.min.css'); ?>" type="text/css"
           rel="stylesheet"/>
     <link href="<?php $this->options->themeUrl('./assets/fontawesome/css/all.min.css'); ?>" type="text/css"
@@ -32,7 +32,7 @@
           rel="stylesheet"/>
     <link href="//lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.css" type="text/css"
           rel="stylesheet"/>
-    <link href="//fastly.jsdelivr.net/gh/fordes123/gleaner/assets/css/styles.css" type="text/css"
+    <link href="//fastly.jsdelivr.net/gh/fordes123/gleaner/assets/css/styles.min.css" type="text/css"
           rel="stylesheet"/>
         <script src="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"
                 type="application/javascript"></script>
