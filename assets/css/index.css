@@ -65,12 +65,9 @@
     float: none;
 }
 
-.index-anchor .centered .about h1 {
+.dark .index-anchor .footer *,
+.dark .index-anchor .centered .about * {
     color: #2B2B2B;
-}
-
-.index-anchor .dark .centered .about {
-    color: #000;
 }
 
 .index-anchor .centered .about h1 {
