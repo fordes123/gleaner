@@ -291,16 +291,6 @@
   width: auto;
   margin-bottom: 5px;
 }
-.articles-controls-item .control-direction:before {
-  width: 12px;
-  height: 8px;
-  background: url(../img/article-control-arrow.svg) center center no-repeat;
-  background-size: contain;
-  position: absolute;
-  content: '';
-  top: 50%;
-  margin-top: -4px;
-}
 .see-also-section {
   display: block;
   float: left;

@@ -86,7 +86,7 @@
             <a href="<?php if (empty($prev->permalink)): ?><?php else: ?><?php $prev->permalink(); ?><?php endif; ?>"
                class="articles-controls-item prev-article">
                 <div class="articles-controls-item-wrapper">
-                    <div class="control-direction">上一篇</div>
+                    <div class="control-direction"><i class="fa-solid fa-arrow-left fa-lg"></i> 上一篇</div>
                     <h3 class="post-title">
                         <?php if (empty($prev->title)): ?>没有了~<?php else: ?><?php $prev->title(); ?><?php endif; ?>
                     </h3>
@@ -98,7 +98,7 @@
             <a href="<?php if (empty($next->permalink)): ?><?php else: ?><?php $next->permalink(); ?><?php endif; ?>"
                class="articles-controls-item next-article">
                 <div class="articles-controls-item-wrapper">
-                    <div class="control-direction">下一篇</div>
+                    <div class="control-direction">下一篇 <i class="fa-solid fa-arrow-right fa-lg"></i></div>
                     <h3 class="post-title">
                         <?php if (empty($next->title)): ?>没有了~<?php else: ?><?php $next->title(); ?><?php endif; ?>
                     </h3>
