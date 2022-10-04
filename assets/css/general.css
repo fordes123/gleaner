@@ -134,6 +134,9 @@ body.pop-up-open {
   left: 0;
   right: 0;
 }
+.dplayer div {
+  width: auto;
+}
 .wrap {
   width: 100%;
   max-width: 1200px;
