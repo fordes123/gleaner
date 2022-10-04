@@ -130,7 +130,7 @@
                 history: false,
                 scrollThreshold: 100
             });
-            $('.box').on('append.infiniteScroll', function (event, response, path) {
+            $('.waterfalls').on('append.infiniteScroll', function (event, response, path) {
                 lazyload();
                 clickToHref();
             });
