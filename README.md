@@ -20,7 +20,7 @@
   <p align="center">
     一个很棒的 Typecho 主题，不来试试吗？
     <br />
-    <a href="https://blog.item.ink"><strong>演示站点 »</strong></a>
+    <a href="https://fordes.top"><strong>演示站点 »</strong></a>
     <br />
     <br />
     <a href="#1">项目说明</a>
