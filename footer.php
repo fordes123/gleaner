@@ -11,7 +11,7 @@
                                 <span>© 2019 - <?php echo date("Y"); ?>&nbsp;</span><a><?php $this->options->bcool_title() ?></a>
                             </li>
                             <li>Poweed by <a href="https://www.typecho.org/" target="_blank">Typecho</a>&nbsp;• <a
-                                        href="https://www.github.com/whitebearcode/typecho-bearcool" target="_blank">Gleaner</a>
+                                        href="https://github.com/fordes123/gleaner" target="_blank">Gleaner</a>
                             </li>
                             <?php if ($this->options->bcool_icp) : ?>
                                 <li><a href="http://beian.miit.gov.cn/publish/query/indexFirst.action"
