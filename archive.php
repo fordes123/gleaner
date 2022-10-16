@@ -47,7 +47,7 @@
                     <div class="portfolio">
 
                         <?php while ($this->next()) : ?>
-                            <div class="portfolio-item p-2 col-6 col-lg-3">
+                            <div class="portfolio-item p-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">
                                 <div class="content" href='<?php $this->permalink() ?>'>
                                     <div class="thumb">
                                         <img src="<?php $this->options->themeUrl('./assets/img/loading.gif'); ?>"
