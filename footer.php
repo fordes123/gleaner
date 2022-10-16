@@ -106,7 +106,22 @@
                 }
             })
         })
-    }</script>
+    }
+    function fixFooter() {
+        var containerHeight = $(".content-container").innerHeight();
+        var windowHeight = $(window).innerHeight();
+        if (containerHeight < windowHeight) {
+            $(".footer").attr("style", "margin-top: " + (windowHeight - containerHeight) + 'px;')
+            $(".content-container-wrap").addClass("relative");
+        } else {
+            $(".footer").removeAttr("style");
+            $(".content-container-wrap").removeClass("relative");
+        }
+    }
+    $(window).on("load", function () {
+        fixFooter();
+    });
+</script>
 <?php if ($this->is('post') || $this->is('page')) : ?>
     <script> /*生成文章二维码*/
         new QRCode(document.getElementById("qrcode"), {
@@ -149,6 +164,7 @@
 
         function lazyloaded() {
             $portfolio.masonry('layout')
+            fixFooter();
         }
 
         $(window).on("load", function () {

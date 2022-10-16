@@ -416,24 +416,6 @@ $(document).ready(function () {
         });
     }
     /*transform tables*/
-
-    /*footer fix if page height is small*/
-    $(window).on('resize', function () {
-        var containerHeight = $(".content-container").innerHeight();
-        var windowHeight = $(window).innerHeight();
-        if (containerHeight < windowHeight) {
-            $(".footer").attr("style", "margin-top: " + (windowHeight - containerHeight) + 'px;')
-            $(".content-container-wrap").addClass("relative");
-        } else {
-            $(".footer").removeAttr("style");
-            $(".content-container-wrap").removeClass("relative");
-        }
-    });
-
-    $(window).trigger('resize');
-    /*footer fix if page height is small*/
-
-
 });
 
 
