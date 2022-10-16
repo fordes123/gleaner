@@ -1025,7 +1025,7 @@
         background: #1d1d1d;
     }
 
-    .container.page--move .mobile-panel {
+    .content-container.page--move .mobile-panel {
         border-radius: 13px 13px 0 0;
     }
 

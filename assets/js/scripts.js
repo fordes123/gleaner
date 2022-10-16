@@ -100,9 +100,6 @@ $(document).ready(function () {
     /*fix css transition onload*/
 
 
-
-
-
     /*input placeholder function*/
     $("input.input[placeholder], textarea.input[placeholder]").each(function () {
         var thisInput = $(this);
@@ -118,10 +115,10 @@ $(document).ready(function () {
 
 
     /*search section*/
-    var pageContainer = $('.page'),
+    var pagecontainer = $('.page'),
         openCtrl = $('.search-button'),
         closeCtrl = $('#search-close'),
-        searchContainer = $('.search-section'),
+        searchcontainer = $('.search-section'),
         inputSearch = $('.search-section .search-input');
 
     function init() {
@@ -143,9 +140,9 @@ $(document).ready(function () {
         $("body").attr("data-scroll", currentScrollPosition);
         $("html, body").scrollTop(0);
         var windowHeight = $(window).innerHeight();
-        $(".container-wrap").height(windowHeight);
-        pageContainer.addClass('page--move');
-        searchContainer.addClass('search--open');
+        $(".content-container-wrap").height(windowHeight);
+        pagecontainer.addClass('page--move');
+        searchcontainer.addClass('search--open');
         inputSearch.focus();
         $("html, body").addClass("locked");
         $("body").addClass("margin-fix");
@@ -153,12 +150,12 @@ $(document).ready(function () {
     }
 
     function closeSearch() {
-        pageContainer.removeClass('page--move');
-        searchContainer.removeClass('search--open');
+        pagecontainer.removeClass('page--move');
+        searchcontainer.removeClass('search--open');
         inputSearch.blur();
         inputSearch.value = '';
         $("html, body").removeClass("locked");
-        $(".container-wrap").removeAttr("style");
+        $(".content-container-wrap").removeAttr("style");
         $("body").removeClass("margin-fix");
         popupCloseFunction();
         $("html, body").scrollTop(+$("body").attr("data-scroll"));
@@ -422,14 +419,14 @@ $(document).ready(function () {
 
     /*footer fix if page height is small*/
     $(window).on('resize', function () {
-        var containerHeight = $(".container").innerHeight();
+        var containerHeight = $(".content-container").innerHeight();
         var windowHeight = $(window).innerHeight();
         if (containerHeight < windowHeight) {
             $(".footer").attr("style", "margin-top: " + (windowHeight - containerHeight) + 'px;')
-            $(".container-wrap").addClass("relative");
+            $(".content-container-wrap").addClass("relative");
         } else {
             $(".footer").removeAttr("style");
-            $(".container-wrap").removeClass("relative");
+            $(".content-container-wrap").removeClass("relative");
         }
     });
 
@@ -1256,14 +1253,11 @@ var QRCode;
 
 
 /*
-
  arcticModal — jQuery plugin
  Version: 0.3
  Author: Sergey Predvoditelev (sergey.predvoditelev@gmail.com)
  Company: Arctic Laboratory (http://arcticlab.ru/)
-
  Docs & Examples: http://arcticlab.ru/arcticmodal/
-
  */
 (function (d) {
     var g = {

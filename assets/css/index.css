@@ -35,7 +35,7 @@
 }
 
 .index-anchor,
-.index-anchor.container-wrap.relative {
+.index-anchor.content-container-wrap.relative {
     position: fixed ;
     padding-top: 0;
 }

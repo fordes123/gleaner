@@ -165,28 +165,28 @@ body.pop-up-open {
 .transition-none * {
   transition: none !important;
 }
-.container {
+.content-container {
   float: left;
   position: relative;
   z-index: 1;
   background: #1d1d1d;
 }
-.container.page--move .container-wrap {
+.content-container.page--move .content-container-wrap {
   transform: translateY(470px) scale(0.95);
   pointer-events: none;
   border-radius: 13px;
 }
 
-.container.page--move .container-wrap--dummy {
+.content-container.page--move .content-container-wrap--dummy {
   transform: none;
   transition-delay: 0.3s;
   opacity: 1;
 }
-.container.page--move .container-wrap canvas,
-.container.page--move .top-panel {
+.content-container.page--move .content-container-wrap canvas,
+.content-container.page--move .top-panel {
   border-radius: 13px 13px 0 0;
 }
-.container-wrap {
+.content-container-wrap {
   transition: transform 1s;
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   position: relative;
@@ -194,7 +194,7 @@ body.pop-up-open {
   float: left;
   padding-top: 122px;
 }
-.container-wrap--dummy {
+.content-container-wrap--dummy {
   height: 36px;
   right: 34px;
   left: 34px;
@@ -208,7 +208,7 @@ body.pop-up-open {
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   opacity: 0;
 }
-.container-wrap--dummy:before {
+.content-container-wrap--dummy:before {
   content: '';
   position: absolute;
   height: 72px;
@@ -219,7 +219,7 @@ body.pop-up-open {
   bottom: 0;
   border-radius: 13px 13px 0 0;
 }
-.container-wrap--dummy:after {
+.content-container-wrap--dummy:after {
   content: '';
   position: absolute;
   height: 108px;
@@ -230,14 +230,14 @@ body.pop-up-open {
   bottom: 0;
   border-radius: 13px 13px 0 0;
 }
-.container-wrap.relative {
+.content-container-wrap.relative {
   /*position: relative;*/
   min-height: 100vh;
 }
-.no-padding .container-wrap {
+.no-padding .content-container-wrap {
   padding-top: 0;
 }
-.no-padding .container.page--move .slider-section {
+.no-padding .content-container.page--move .slider-section {
   border-radius: 13px 13px 0 0;
   overflow: hidden;
   -webkit-mask-image: -webkit-radial-gradient(white, black);
@@ -325,21 +325,21 @@ body.pop-up-open {
 .dark .agreement-label:before {
   border-color: #747B88;
 }
-.dark .container {
+.dark .content-container {
   /*background: #fff;*/
   background: #4e4d4d;
 }
-.dark .container-wrap {
+.dark .content-container-wrap {
   background: #1d1d1d;
   color: #fff;
 }
-.dark .container-wrap--dummy {
+.dark .content-container-wrap--dummy {
   background: rgba(0, 0, 0, 0.66);
 }
-.dark .container-wrap--dummy:before {
+.dark .content-container-wrap--dummy:before {
   background: rgba(0, 0, 0, 0.4);
 }
-.dark .container-wrap--dummy:after {
+.dark .content-container-wrap--dummy:after {
   background: rgba(0, 0, 0, 0.66);
 }
 .dark .overlay {
@@ -401,10 +401,10 @@ body.pop-up-open {
   .logo {
     font-size: 33px;
   }
-  .container-wrap {
+  .content-container-wrap {
     padding-top: 80px;
   }
-  .container.page--move .container-wrap {
+  .content-container.page--move .content-container-wrap {
     transform: translateY(400px);
   }
 }
@@ -440,23 +440,23 @@ body.pop-up-open {
   .agreement-label br {
     display: none;
   }
-  .container-wrap--dummy {
+  .content-container-wrap--dummy {
     height: 20px;
     top: -20px;
     right: 24px;
     left: 24px;
   }
-  .container-wrap--dummy:before {
+  .content-container-wrap--dummy:before {
     height: 40px;
     right: 24px;
     left: 24px;
   }
-  .container-wrap--dummy:after {
+  .content-container-wrap--dummy:after {
     height: 60px;
     left: 48px;
     right: 48px;
   }
-  .container.page--move .container-wrap {
+  .content-container.page--move .content-container-wrap {
     transform: translateY(342px);
   }
   .bottom-message.visible {
@@ -518,7 +518,7 @@ body.pop-up-open {
   overflow: hidden;
 }
 
-.offline .page-404 .runner-container {
+.offline .page-404 .runner-content-container {
   height: 150px;
   max-width: 600px;
   overflow: hidden;
@@ -649,7 +649,7 @@ body.pop-up-open {
     margin-bottom: 0;
   }
 
-  .offline .page-404 .runner-container {
+  .offline .page-404 .runner-content-container {
     top: 10px;
   }
 }

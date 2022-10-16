@@ -75,10 +75,11 @@
     </script>
 <?php endif; ?>
 <?php if ($this->options->debug_mode) : ?>
-    <script src="<?php $this->options->themeUrl('./assets/js/lazyload.js'); ?>" type="application/javascript"></script>
+    <script src="<?php $this->options->themeUrl('./assets/js/lazyload.min.js'); ?>" type="application/javascript"></script>
     <script src="<?php $this->options->themeUrl('./assets/js/scripts.min.js'); ?>" type="application/javascript"></script>
     <script src="<?php $this->options->themeUrl('./assets/js/jquery.fancybox.min.js'); ?>"
             type="application/javascript"></script>
+    <script src="<?php $this->options->themeUrl('./assets/js/masonry.pkgd.min.js'); ?>" type="application/javascript"></script>
 
 <?php else : ?>
     <script src="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.js"
@@ -87,6 +88,7 @@
             type="application/javascript"></script>
     <script src="//fastly.jsdelivr.net/gh/fordes123/gleaner/assets/js/scripts.min.js?>"
             type="application/javascript"></script>
+    <script src="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/masonry/4.2.2/masonry.pkgd.min.js" type="application/javascript"></script>
 <?php endif; ?>
 
 <script>clickToHref();
@@ -120,21 +122,42 @@
     <script src="<?php $this->options->themeUrl('./assets/js/infinite-scroll.pkgd.min.js'); ?>"
             type="text/javascript"></script> <?php else : ?>
     <script src="//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-infinitescroll/4.0.1/infinite-scroll.pkgd.min.js"></script> <?php endif; ?>
-    <script> lazyload();
+    <script>
+        var $portfolio = $('.portfolio').masonry({
+            itemSelector: '.portfolio-item',
+        });
+
         if ($('.ajaxloadpost .next').length > 0) {
-            $('.waterfalls').infiniteScroll({
+            var masonry = $portfolio.data('masonry');
+            $portfolio.infiniteScroll({
                 path: '.next',
-                append: '.box',
+                append: '.portfolio-item',
                 hideNav: '.ajaxloadpost',
                 status: '.page-load-status',
                 history: false,
-                scrollThreshold: 100
+                scrollThreshold: 100,
+                outlayer: masonry
             });
-            $('.waterfalls').on('append.infiniteScroll', function (event, response, path) {
-                lazyload();
+
+            $('.portfolio').on('append.infiniteScroll', function () {
+                $("img.lazyload").lazyload({
+                    onLoaded: lazyloaded
+                });
                 clickToHref();
             });
-        }</script><?php endif; ?>
+        }
+
+        function lazyloaded() {
+            $portfolio.masonry('layout')
+        }
+
+        $(window).on("load", function () {
+            $("img.lazyload").lazyload({
+                onLoaded: lazyloaded
+            });
+
+        });
+    </script><?php endif; ?>
 <?php $this->footer(); ?>
 </body>
 </html>

@@ -22,6 +22,7 @@
           rel="stylesheet"/>
     <link href="<?php $this->options->themeUrl('./assets/css/third/jquery.fancybox.min.css'); ?>" type="text/css"
           rel="stylesheet"/>
+    <link href="<?php $this->options->themeUrl('./assets/css/third/bootstrap-grid.min.css'); ?>" type="text/css" rel="stylesheet" />
         <script src="<?php $this->options->themeUrl('./assets/js/jquery.min.js'); ?>"
                 type="application/javascript"></script>
 
@@ -34,6 +35,7 @@
           rel="stylesheet"/>
     <link href="//fastly.jsdelivr.net/gh/fordes123/gleaner/assets/css/styles.min.css" type="text/css"
           rel="stylesheet"/>
+    <link href="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.0.0/css/bootstrap-grid.min.css" type="text/css" rel="stylesheet" />
         <script src="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"
                 type="application/javascript"></script>
     <?php endif; ?>
@@ -120,8 +122,8 @@
         </div>
     </div>
 </div>
-<div class="container page">
-    <div class="container-wrap <?php if ($this->is('index')) : ?>index-anchor<?php endif; ?> ">
+<div class="content-container page">
+    <div class="content-container-wrap <?php if ($this->is('index')) : ?>index-anchor<?php endif; ?> ">
         <div class="mobile-panel">
             <div class="wrap">
                 <div class="wrap_float">
@@ -133,7 +135,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-wrap--dummy"></div>
+        <div class="content-container-wrap--dummy"></div>
         <div class="top-panel" id="js-panel">
             <div class="wrap">
                 <div class="wrap_float">
