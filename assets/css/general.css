@@ -635,10 +635,6 @@ body.pop-up-open {
 }
 
 @media (min-height: 240px) and (orientation: landscape) {
-  .offline .page-404 .interstitial-wrapper {
-    margin-bottom: 90px;
-  }
-
   .page-404 .icon-offline {
     margin-bottom: 20px;
   }

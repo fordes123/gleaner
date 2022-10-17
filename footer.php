@@ -118,7 +118,7 @@
             $(".content-container-wrap").removeClass("relative");
         }
     }
-    $(window).on("resize", fixFooter());
+    $(window).resize(function() {fixFooter()});
     $(window).on("load", function () {
         fixFooter();
     });
