@@ -288,7 +288,7 @@ HTML;
     $debug_mode->setAttribute('class', 'bearui_content bearui_other');
     $form->addInput($debug_mode);
 
-    $bcool_404 = new Typecho_Widget_Helper_Form_Element_Textarea('bcool_404', null, '', '404页面提示语', '自定义提示语将出现在中间位置，建议使用HTML</br> <a href="./404.html" target="_blank">点此</a> 查看默认404页，用作参考');
+    $bcool_404 = new Typecho_Widget_Helper_Form_Element_Textarea('bcool_404', null, '🏠您可能需要<a href="https://blog.fordes.top">👉 返回首页</a><br>📌或者去发现些新东西<a href="https://item.ink">👉 网址导航</a>', '404页面提示语', '自定义提示语将出现在中间位置，建议使用HTML</br><a href="./404.html" target="_blank"> 👉 点此 </a>打开404页面以查看效果');
     $bcool_404->setAttribute('class', 'bearui_content bearui_other');
     $form->addInput($bcool_404);
 

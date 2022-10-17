@@ -45,6 +45,6 @@
 <script>
     document.onkeydown = function(n) {
         32 === (n = n || window.event).keyCode && (document.getElementById("messageBox").style.visibility = "hidden")
-    }, document.querySelector("#message").innerHTML += '<h1>😭&nbsp;&nbsp;您访问页面找不到啦</h1><p><?php echo empty($this->options->bcool_404)?'🏠您可能需要<a href="https://blog.fordes.top"><i class="fas fa-hand-point-right"></i>👉 返回首页</a><br>📌或者去发现些新东西<a href="https://item.ink"><i class="fa fa-hand-point-right"></i>👉 网址导航</a>':$this->options->bcool_404; ?><br>或者...<br>🐱‍🐉玩一会小恐龙dino快跑&nbsp;&nbsp;&nbsp;&nbsp;(<a href="https://github.com/18121259693/dino"><i class="fa fa-link"></i> 本页源码</a>)<br>按<span>空格(space)</span><span>上(↑)</span><span>下(↓)</span><span>左(←)</span><span>右(→)</span>键试试</p>'
+    }, document.querySelector("#message").innerHTML += '<h1>😭&nbsp;&nbsp;您访问页面找不到啦</h1><p><?php echo empty($this->options->bcool_404)?'':$this->options->bcool_404; ?><br>或者...<br>🐱‍🐉玩一会小恐龙dino快跑&nbsp;&nbsp;&nbsp;&nbsp;(<a href="https://github.com/18121259693/dino"><i class="fa fa-link"></i> 本页源码</a>)<br>按<span>空格(space)</span><span>上(↑)</span><span>下(↓)</span><span>左(←)</span><span>右(→)</span>键试试</p>'
 </script>
 <?php $this->need('footer.php'); ?>
