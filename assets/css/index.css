@@ -17,6 +17,10 @@
     background: #FFF;
 }
 
+.index-anchor .top-panel.opened .mode-checkbox-label:after {
+    background: #747B88;
+}
+
 .index-anchor .mode-checkbox-input:checked + .mode-checkbox-label:after {
     background: #0D84FB;
 }
