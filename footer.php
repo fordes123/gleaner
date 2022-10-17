@@ -84,7 +84,7 @@
 <?php else : ?>
     <script src="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.js"
             type="application/javascript"></script>
-    <script src="//fastly.jsdelivr.net/gh/fordes123/gleaner/assets/js/lazyload.js"
+    <script src="//fastly.jsdelivr.net/gh/fordes123/gleaner/assets/js/lazyload.min.js"
             type="application/javascript"></script>
     <script src="//fastly.jsdelivr.net/gh/fordes123/gleaner/assets/js/scripts.min.js?>"
             type="application/javascript"></script>
