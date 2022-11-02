@@ -21,10 +21,10 @@
     }/*手风琴折叠*/
     if (strpos($content, '{bcool-accordion') !== false) {
         if (strpos($content, '{bcool-accordion type=stand') !== false) {
-            $content = preg_replace('/\{bcool-accordion type=stand title=(.*?)\}(.*?)\{\/bcool-accordion\}/sm', '<div class="accordion-item"><div class="accordion-item-title"><span>$1</span></div><div class="accordion-item-content"><p>$2</p></div></div>', $content);
+                    $content = preg_replace('/\{bcool-accordion type=stand title=(.*?)\}(.*?)\{\/bcool-accordion\}/sm', '<div class="accordion-item"><div class="accordion-item-title"><span>$1</span></div><div class="accordion-item-content" style="display: none;"><p>$2</p></div></div>', $content);
         }
         if (strpos($content, '{bcool-accordion type=line') !== false) {
-            $content = preg_replace('/\{bcool-accordion type=line title=(.*?)\}(.*?)\{\/bcool-accordion\}/sm', '<div class="accordion-block with-border"><div class="accordion-item"><div class="accordion-item-title"><span>$1</span></div><div class="accordion-item-content"><p>$2</p></div></div></div>', $content);
+            $content = preg_replace('/\{bcool-accordion type=line title=(.*?)\}(.*?)\{\/bcool-accordion\}/sm', '<div class="accordion-block with-border"><div class="accordion-item"><div class="accordion-item-title"><span>$1</span></div><div class="accordion-item-content" style="display: none;"><p>$2</p></div></div></div>', $content);
         }
     }
     $pattern = '/\<img.*?src\=\"(.*?)\"[^>]*>/i';
