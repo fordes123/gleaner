@@ -89,28 +89,6 @@
     top: 13px;
 }
 
-.wp-content ul.checklist-ul li:before {
-    width: 20px;
-    height: 20px;
-    background: #E1F0FF url(../img/check-list-before.svg) center center no-repeat;
-    background-size: 8px 8px;
-    border-radius: 50%;
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 8px;
-}
-
-.wp-content ul.checklist-ul li.disable-li:before {
-    background-color: #FFD7C2;
-    background-image: url(../img/disable-li.svg);
-}
-
-.wp-content ul.checklist-ul li.plus-li:before {
-    background-color: #D4EFDA;
-    background-image: url(../img/plus-li.svg);
-}
-
 .wp-content ol {
     padding-left: 30px;
 }
@@ -145,6 +123,8 @@
     width: 100%;
     margin: 30px 0;
     padding: 50px 55px 40px;
+    word-wrap: break-word;
+    overflow: auto;
 }
 
 .wp-content blockquote p:first-child {
