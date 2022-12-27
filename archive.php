@@ -50,8 +50,8 @@
                             <div class="portfolio-item p-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">
                                 <div class="content" href='<?php $this->permalink() ?>'>
                                     <div class="thumb">
-                                        <img src="<?php $this->options->themeUrl('./assets/img/loading.gif'); ?>"
-                                             data-src="<?php echo thumb($this); ?>" class="lazyload"/>
+                                        <img class="lazy" src="<?php $this->options->themeUrl('./assets/img/loading.gif'); ?>"
+                                             data-src="<?php echo thumb($this); ?>" error-src="<?php $this->options->themeUrl('./assets/img/404.jpg'); ?>" alt=""/>
                                         <div class="widget">
                                             <div class="post-tags">
                                                 <div class="tag">
@@ -63,9 +63,8 @@
                                             <div class="post-info">
                                                 <div class="post-author">
                                                     <div class="author-image">
-                                                        <img src="<?php Gravatar($this->author->mail); ?>"
-                                                             onerror="this.src='<?php fallbackGravatar(); ?>';" alt=""
-                                                             class="image-cover">
+                                                        <img class="lazy image-cover" src="<?php $this->options->themeUrl('./assets/img/avatar/default.png'); ?>"
+                                                             data-src="<?php Gravatar($this->author->mail); ?>" error-src="<?php fallbackGravatar(); ?>"  alt=""/>
                                                     </div>
                                                     <span><?php $this->author(); ?></span>
                                                 </div>

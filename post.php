@@ -18,8 +18,8 @@
             <div class="post-info">
                 <div class="post-author post-info-author">
                     <div class="author-image">
-                        <img src="<?php Gravatar($this->author->mail); ?>" onerror="<?php fallbackGravatar(); ?>" alt=""
-                             class="image-cover">
+                        <img class="lazy image-cover" src="<?php $this->options->themeUrl('./assets/img/avatar/default.png'); ?>"
+                             data-src="<?php Gravatar($this->author->mail); ?>" error-src="<?php fallbackGravatar(); ?>"  alt=""/>
                     </div>
                     <span><?php $this->author(); ?></span>
                 </div>

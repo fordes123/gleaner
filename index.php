@@ -15,12 +15,14 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <?php $this->need('header.php'); ?>
 <section class="centered ">
     <div class="about">
-        <div class="avatar"><img
-                    src="<?php if (empty($this->options->bcool_avatar)) $this->options->themeUrl('/assets/img/head.png'); else $this->options->bcool_avatar(); ?>"
-                    alt="avatar"></div>
-        <h1><?php $this->options->bcool_nickname(); ?></h1>
-        <h2><?php $this->options->bcool_slogan() ?><br></h2>
-        <ul><?php indexAppInfo() ?></ul>
-    </div>
+        <div class="avatar">
+            <img class="lazy"
+                 src="<?php if (empty($this->options->bcool_avatar)) $this->options->themeUrl('/assets/img/head.png'); else $this->options->bcool_avatar(); ?>"
+                 data-src="<?php if (empty($this->options->bcool_avatar)) $this->options->themeUrl('/assets/img/head.png'); else $this->options->bcool_avatar(); ?>"
+                 error-src="<?php fallbackGravatar(); ?>" alt=""/>
+            <h1><?php $this->options->bcool_nickname(); ?></h1>
+            <h2><?php $this->options->bcool_slogan() ?><br></h2>
+            <ul><?php indexAppInfo() ?></ul>
+        </div>
 </section>
 <?php $this->need('footer.php'); ?>

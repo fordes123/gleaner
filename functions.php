@@ -8,7 +8,7 @@ include_once('core/func.php');
 
 function themeVersion()
 {
-    return '1.1.0.Alpha';
+    return '1.2.0.Alpha';
 }
 
 

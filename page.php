@@ -7,9 +7,10 @@
             <h1 class="page-title"><?php $this->title() ?></h1>
             <div class="post-info">
                 <div class="post-author post-info-author">
-                    <div class="author-image"><img src="<?php Gravatar($this->author->mail); ?>" alt=""
-                                                   onerror="<?php fallbackGravatar(); ?>"
-                                                   class="image-cover"></div>
+                    <div class="author-image">
+                        <img class="lazy image-cover" src="<?php $this->options->themeUrl('./assets/img/avatar/default.png'); ?>"
+                             data-src="<?php Gravatar($this->author->mail); ?>" error-src="<?php fallbackGravatar(); ?>"  alt=""/>
+                    </div>
                     <span><?php $this->author(); ?></span></div>
                 <div class="post-date post-info-date">
                     <i class="fa-regular fa-clock"></i><?php $this->date(); ?>

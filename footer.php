@@ -68,19 +68,25 @@
     <script id="vs" type="x-shader/x-vertex">
          varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 ); }
 
+
     </script>
     <script id="fs" type="x-shader/x-fragment">
          uniform sampler2D map; uniform vec3 fogColor; uniform float fogNear; uniform float fogFar; varying vec2 vUv; void main() { float depth = gl_FragCoord.z / gl_FragCoord.w; float fogFactor = smoothstep( fogNear, fogFar, depth ); gl_FragColor = texture2D( map, vUv ); gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 ); gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor ); }
 
+
     </script>
 <?php endif; ?>
 <?php if ($this->options->debug_mode) : ?>
-    <script src="<?php $this->options->themeUrl('./assets/js/lazyload.min.js'); ?>" type="application/javascript"></script>
-    <script src="<?php $this->options->themeUrl('./assets/js/scripts.min.js'); ?>" type="application/javascript"></script>
+    <script src="<?php $this->options->themeUrl('./assets/js/lazyload.min.js'); ?>"
+            type="application/javascript"></script>
+    <script src="<?php $this->options->themeUrl('./assets/js/scripts.min.js'); ?>"
+            type="application/javascript"></script>
     <script src="<?php $this->options->themeUrl('./assets/js/jquery.fancybox.min.js'); ?>"
             type="application/javascript"></script>
-    <script src="<?php $this->options->themeUrl('./assets/js/masonry.pkgd.min.js'); ?>" type="application/javascript"></script>
-
+    <script src="<?php $this->options->themeUrl('./assets/js/masonry.pkgd.min.js'); ?>"
+            type="application/javascript"></script>
+    <script src="<?php $this->options->themeUrl('./assets/js/infinite-scroll.pkgd.min.js'); ?>"
+            type="text/javascript"></script>
 <?php else : ?>
     <script src="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.js"
             type="application/javascript"></script>
@@ -88,7 +94,9 @@
             type="application/javascript"></script>
     <script src="//fastly.jsdelivr.net/gh/fordes123/gleaner/assets/js/scripts.min.js?>"
             type="application/javascript"></script>
-    <script src="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/masonry/4.2.2/masonry.pkgd.min.js" type="application/javascript"></script>
+    <script src="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/masonry/4.2.2/masonry.pkgd.min.js"
+            type="application/javascript"></script>
+    <script src="//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-infinitescroll/4.0.1/infinite-scroll.pkgd.min.js"></script>
 <?php endif; ?>
 
 <script>clickToHref();
@@ -107,6 +115,7 @@
             })
         })
     }
+
     function fixFooter() {
         var containerHeight = $(".content-container").innerHeight();
         var windowHeight = $(window).innerHeight();
@@ -118,7 +127,10 @@
             $(".content-container-wrap").removeClass("relative");
         }
     }
-    $(window).resize(function() {fixFooter()});
+
+    $(window).resize(function () {
+        fixFooter()
+    });
     $(window).on("load", function () {
         fixFooter();
     });
@@ -133,48 +145,47 @@
             colorDark: "#000000",
             colorLight: "#ffffff",
             correctLevel: QRCode.CorrectLevel.H
-        });</script><?php endif; ?>
-<?php if (!($this->is('post') || $this->is('page'))) : ?><?php if ($this->options->debug_mode) : ?>
-    <script src="<?php $this->options->themeUrl('./assets/js/infinite-scroll.pkgd.min.js'); ?>"
-            type="text/javascript"></script> <?php else : ?>
-    <script src="//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-infinitescroll/4.0.1/infinite-scroll.pkgd.min.js"></script> <?php endif; ?>
-    <script>
-        var $portfolio = $('.portfolio').masonry({
-            itemSelector: '.portfolio-item',
+        });</script>
+<?php endif; ?>
+
+<script>
+    var $portfolio = $('.portfolio').masonry({
+        itemSelector: '.portfolio-item',
+    });
+
+    var lazyLoadInstance = new LazyLoad({
+        callback_error: (img) => {
+            $(img).attr('src', $(img).attr('error-src'));
+        },
+        callback_loaded: (img) => {
+            if ($('.portfolio')) {
+                console.log('loaded');
+                $portfolio.masonry('layout')
+                fixFooter();
+            }
+        }
+    });
+
+    if ($('.ajaxloadpost .next').length > 0) {
+        var masonry = $portfolio.data('masonry');
+        $portfolio.infiniteScroll({
+            path: '.next',
+            append: '.portfolio-item',
+            hideNav: '.ajaxloadpost',
+            status: '.page-load-status',
+            history: false,
+            scrollThreshold: 100,
+            outlayer: masonry
         });
 
-        if ($('.ajaxloadpost .next').length > 0) {
-            var masonry = $portfolio.data('masonry');
-            $portfolio.infiniteScroll({
-                path: '.next',
-                append: '.portfolio-item',
-                hideNav: '.ajaxloadpost',
-                status: '.page-load-status',
-                history: false,
-                scrollThreshold: 100,
-                outlayer: masonry
-            });
-
-            $('.portfolio').on('append.infiniteScroll', function () {
-                $("img.lazyload").lazyload({
-                    onLoaded: lazyloaded
-                });
-                clickToHref();
-            });
-        }
-
-        function lazyloaded() {
-            $portfolio.masonry('layout')
-            fixFooter();
-        }
-
-        $(window).on("load", function () {
-            $("img.lazyload").lazyload({
-                onLoaded: lazyloaded
-            });
-
+        $('.portfolio').on('append.infiniteScroll', function () {
+            lazyLoadInstance.update();
+            clickToHref();
         });
-    </script><?php endif; ?>
+    }
+
+</script>
+
 <?php $this->footer(); ?>
 </body>
 </html>
