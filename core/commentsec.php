@@ -114,7 +114,7 @@ class BearcoolSpam
             }
         }
         if (!empty($options->BearSpam_NAMEMAX)) {
-            if (BearcoolSpam::strLength($comment['author'] > $options->BearSpam_NAMEMAX)) {
+            if (BearcoolSpam::strLength($comment['author']) > $options->BearSpam_NAMEMAX) {
                 throw new Typecho_Widget_Exception("抱歉，系统检测到您的评论昵称过长，已自动拦截。");
                 Typecho_Cookie::set('__typecho_remember_text', $comment['text']);
             }
