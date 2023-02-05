@@ -6,7 +6,7 @@
  *
  * @package gleaner
  * @author fordes
- * @version 1.0.0
+ * @version 1.2.2
  * @link https://blog.fordes.top/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
