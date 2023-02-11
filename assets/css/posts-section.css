@@ -276,6 +276,9 @@
 .post-tags .hashtag:hover {
   color: #0D84FB;
 }
+.post-tags .hashtag:not(:has(a)) {
+  display: none;
+}
 .post-tags a.tag:hover {
   background: #0D84FB;
   color: #fff;
