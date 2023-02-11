@@ -159,7 +159,6 @@
         },
         callback_loaded: (img) => {
             if ($('.portfolio')) {
-                console.log('loaded');
                 $portfolio.masonry('layout')
                 fixFooter();
             }
