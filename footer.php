@@ -32,14 +32,14 @@
 <div style="display: none;">
     <div class="modal modal_default modal_success" id="modal-qrcode">
         <div class="modal_wrap">
-            <center><h2 class="title">微信分享二维码</h2>
+            <h2 class="title">微信分享二维码</h2>
                 <div class="subtitle">
                     <div id="qrcode"></div>
                 </div>
         </div>
-        </center>
         <div class="modal_close"></div>
     </div>
+</div>
 </div>
 </div>
 <?php if ($this->is('index')) : ?>

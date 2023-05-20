@@ -225,7 +225,7 @@ $(document).ready(function () {
             thisA.toggleClass("opened");
             thisMenu.slideToggle();
         }
-    })
+    });
 
     $(document).mouseup(function (e) {
         if (device.tablet() && !firstLevelMenu.is(e.target) && !secondLevelMenu.is(e.target)) {
@@ -509,13 +509,14 @@ $(document).ready(function () {
         camera.target.position.z = camera.position.z - 1000;
         renderer.render(scene, camera);
     }
+
     /*sidebar catalog*/
     function genCatalogs() {
         let toc = [];
         $('#bearcool-images').find('h1,h2,h3,h4,h5,h6').each((index, item) => {
             item = $(item);
             item.attr('id', `anchor-${index}`);
-            item.attr('index', index)
+            item.attr('index', index);
             toc.push({
                 ...item, level: Number(item.prop("tagName").substring(1, 2)),
                 content: item.text(), index: `${index}`
@@ -556,15 +557,15 @@ $(document).ready(function () {
                 first.children = [];
                 toTree(first.children, children, level + 1);
             }
-        }
+        };
         let tree = [];
         toTree(tree, toc, 1);
         return tree;
     };
     genCatalogs().forEach(item => {
         let catalog = $('<div class="catalog"></div>');
-        catalog.append(`<div class="item"><div class="circle"></div><a class="title" id=cata-${item.index} onclick="javascript:document.getElementById('anchor-${item.index}').scrollIntoView({block:'start'})">${item.content}</a></div>`)
-        let child = $('<div></div>')
+        catalog.append(`<div class="item"><div class="circle"></div><a class="title" id=cata-${item.index} onclick="javascript:document.getElementById('anchor-${item.index}').scrollIntoView({block:'start'})">${item.content}</a></div>`);
+        let child = $('<div></div>');
         if (item.children)
             item.children.forEach(sub => {
                 child.append(`<div class="item sub-catalog"><div class="circle h3"></div><a class="title" id='cata-${sub.index}' onclick="javascript:document.getElementById('anchor-${sub.index}').scrollIntoView({block:'start'})">${sub.content}</a></div>`);
@@ -574,19 +575,18 @@ $(document).ready(function () {
     });
     const titleScrollObserver = (obs) => {
         obs.forEach(observe => {
-            const ratio = observe.intersectionRatio
+            const ratio = observe.intersectionRatio;
             let item = $(`#cata-${$(observe.target).attr('index')}`);
-            console.log(ratio);
             if (ratio === 0) {
                 item.removeClass('show');
             } else if (ratio > 0) {
                 item.addClass('show');
-                item.get(0).scrollIntoView({block:"nearest"})
+                item.get(0).scrollIntoView({block: "nearest"})
             }
         });
-    }
+    };
     const observer = new IntersectionObserver(titleScrollObserver);
-    let tocList = document.getElementById('bearcool-images').querySelectorAll("h1,h2,h3,h4,h5,h6")
+    let tocList = document.getElementById('bearcool-images').querySelectorAll("h1,h2,h3,h4,h5,h6");
     Array.from(tocList).map(item => observer.observe(item));
     /*sidebar catalog*/
 });
@@ -1230,7 +1230,7 @@ var QRCode;
             }
             label.animate({}, settings.timeMove);
             input.keyup();
-        }
+        };
         $(this).each(function (i, e) {
             var self = $(e);
             if (self.attr('bind-placeholder-label') != undefined) {
