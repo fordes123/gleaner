@@ -75,6 +75,7 @@
                         <?php echo ShortCode($this->content, $this, $this->user->hasLogin()); ?>
                     </div>
                 </div>
+                <section class="catalog-container"></section>
             </div>
         </div>
 
