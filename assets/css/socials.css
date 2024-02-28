@@ -1,0 +1,76 @@
+.socials {
+  display: block;
+  float: left;
+  width: auto;
+}
+.socials .soc-link {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ebebeb;
+  margin-right: 13px;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  float: left;
+}
+.socials .soc-link:last-child {
+  margin-right: 0;
+}
+.socials .soc-link img,
+.socials .soc-link svg {
+  max-width: 18px;
+  max-height: 18px;
+}
+.socials .soc-link * {
+  fill: #747B88;
+  transition: all 0.2s linear;
+}
+.socials .soc-link:hover {
+  background: #0D84FB;
+}
+.socials .soc-link:hover * {
+  fill: #fff;
+  transition: all 0.1s linear;
+}
+.dark .socials .soc-link {
+  background: rgba(255, 255, 255, 0.17);
+}
+.dark .socials .soc-link:hover {
+  background: #0D84FB;
+}
+.dark .socials .soc-link * {
+  fill: #DBDDE1;
+}
+.mobile .socials .soc-link:hover,
+.tablet .socials .soc-link:hover {
+  background: #ebebeb;
+}
+.mobile .socials .soc-link:hover *,
+.tablet .socials .soc-link:hover * {
+  fill: #747B88;
+}
+.mobile .dark .socials .soc-link:hover,
+.tablet .dark .socials .soc-link:hover {
+  background: rgba(255, 255, 255, 0.17);
+}
+.mobile .dark .socials .soc-link:hover *,
+.tablet .dark .socials .soc-link:hover * {
+  fill: #DBDDE1;
+}
+@media screen and (max-width: 1024px) {
+  .socials .soc-link {
+    width: 44px;
+    height: 44px;
+  }
+  .socials .soc-link:after {
+    display: none;
+  }
+  .socials .soc-link:hover {
+    background: #dbdde1;
+  }
+}

@@ -1,0 +1,91 @@
+/*
+BearCool Theme
+*/
+@import "jquery.arcticmodal.css";
+@import "general.css";
+@import "buttons.css";
+@import "inputs.css";
+@import "socials.css";
+@import "top-panel.css";
+@import "search-section.css";
+@import "posts-section.css";
+@import "footer.css";
+@import "single.css";
+@import "comments.css";
+@import "wp-content.css";
+@import "sidebar.css";
+@import "archive.css";
+@import "share.css";
+@import "modals.css";
+@import "index.css";
+
+.page-load-status {
+    display: none; /* hidden by default */
+    padding-top: 20px;
+    border-top: 1px solid #DDD;
+    text-align: center;
+    color: #777;
+}
+
+.loader-ellips {
+    font-size: 20px; /* change size here */
+    position: relative;
+    width: 4em;
+    height: 1em;
+    margin: 10px auto;
+    float: initial;
+}
+
+.loader-ellips__dot {
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 0.5em;
+    background: #555; /* change color here */
+    position: absolute;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+.loader-ellips__dot:nth-child(1),
+.loader-ellips__dot:nth-child(2) {
+    left: 0;
+}
+
+.loader-ellips__dot:nth-child(3) {
+    left: 1.5em;
+}
+
+.loader-ellips__dot:nth-child(4) {
+    left: 3em;
+}
+
+@keyframes reveal {
+    from {
+        transform: scale(0.001);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes slide {
+    to {
+        transform: translateX(1.5em)
+    }
+}
+
+.loader-ellips__dot:nth-child(1) {
+    animation-name: reveal;
+}
+
+.loader-ellips__dot:nth-child(2),
+.loader-ellips__dot:nth-child(3) {
+    animation-name: slide;
+}
+
+.loader-ellips__dot:nth-child(4) {
+    animation-name: reveal;
+    animation-direction: reverse;
+}
